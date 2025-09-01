@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+/* Global font */
+* {
+  font-family: 'Avenir', sans-serif;
+}
+
+.btn-primary {
+  display: flex;
+  align-items: center;
+  height: 2.5rem; /* h-10 */
+  gap: 0.5rem; /* gap-2 */
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem;
+  font-size: 0.875rem; /* text-sm */
+  color: white;
+  background-color: #a855f7; /* bg-purple-500 */
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #9333ea; /* hover:bg-purple-600 */
+  }
+}
+
+
+
+
+/* Datepicker z-index */
+.react-datepicker-popper {
+  z-index: 9999 !important;
+}
+
+.react-datepicker{
+  border:none !important
+}
+
+.react-datepicker__header{
+  background-color:#9CA3AF !important ;
+}
+.react-datepicker__current-month, 
+.react-datepicker-time__header,
+.react-datepicker-year-header ,
+.react-datepicker__day-name, 
+.react-datepicker__day, 
+.react-datepicker__time-name
+{
+  color:white !important;
+}
+
+.react-datepicker__navigation-icon--previous::before,
+.react-datepicker__navigation-icon--next::before {
+  border-color:white !important; /* Example: Tailwind's gray-700 */
+}
+
+/* Force all dates (including disabled) to appear black */
+.react-datepicker__day,
+.react-datepicker__day--disabled,
+.react-datepicker__day--outside-month {
+  color: black !important;
+}
+
+.react-datepicker__day--today {
+  background-color: #e9d5ff !important;
+  color: #9333ea !important; /* Tailwind purple-600 */
+  font-weight: bold;
+  border:#9333ea !important;
+}
+
+.react-datepicker__day:hover {
+ background-color: #e9d5ff !important;
+ color: #7e22ce !important;
+ border-radius: 0.3rem;
+ }
+
+.react-datepicker__day--in-selecting-range {
+ background-color: #f3e8ff !important; /* Tailwind purple-100 */
+ color: #7e22ce !important;            /* Tailwind purple-700 */
+ }
+
+/* Range selected - Light purple */
+.react-datepicker__day--in-range {
+  background-color: #e9d5ff !important; /* Tailwind purple-200 */
+  color: #7e22ce !important;
+}
+
+/* Range start/end - Darker purple */
+.react-datepicker__day--range-start,
+.react-datepicker__day--range-end {
+  background-color: #9333ea !important; /* Tailwind purple-600 */
+  color: #ffffff !important;
+  border-radius: 0.3rem;
+}
+
+/* Selected day fallback */
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: #9333ea !important;
+  color: #ffffff !important;
+  border-radius: 0.3rem;
+  border:#9333ea !important;
+}
+
+/* Disable future date hover, pointer events, and make them look grayed out */
+.react-datepicker__day--disabled {
+  pointer-events: none !important;
+  opacity: 0.7 !important;
+  background-color: transparent !important;
+  color: #ccc !important;
+  cursor: not-allowed !important;
+}
+
+/* styles.css or SkeletonLoader.module.css */
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+
