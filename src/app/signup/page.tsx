@@ -48,7 +48,7 @@ export default function SignUpPage() {
     }
 
    
-    const existingUsers = getLocalData("users") || "[]";
+    const existingUsers = getLocalData("users") || [];
 
     if (existingUsers.some((user: any) => user.name === name)) {
       showError("Username already exists", "validation");

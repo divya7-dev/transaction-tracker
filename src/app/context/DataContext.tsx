@@ -63,7 +63,7 @@ export const TransProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     if (user?.email) {
       const allTransactions = getLocalData("TransactionData");
-      const userTxns = allTransactions[user.email] || [];
+      const userTxns = allTransactions ? (allTransactions[user.email]) : [];
       setTransactions(userTxns);
       updateAndStoreTotals(user.email, userTxns);
     }
